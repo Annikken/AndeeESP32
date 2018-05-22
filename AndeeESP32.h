@@ -14,7 +14,7 @@ extern bool versionAndClear;
 extern bool resetBLEFlag;
 
 
-void sendToPhone(char*);
+void btSend(char*);
 //This function transfers data from the Arduino 101 to the connected BLE device. Since the Arduino 101 can only send data in 18 byte packets, this function automatically cuts the data up into 18 byte packets and send them one after the other to the target. 
 
 
@@ -40,7 +40,7 @@ void systemTime(void);
 void processReply();
 //This function processes the replies from the smart device
 
-class AndeeESPClass
+class AndeeClass
 {
 	public:
 	
@@ -48,19 +48,18 @@ class AndeeESPClass
 	
 	bool isConnected(void);
 	
-	void resetBLE(void);
-	 
+	void resetBLE(void);	 
+	
+	void begin(const char*);
 	void begin(void);
 	//This is needed to start the BLE services
 	
 	void broadcast(void);
 	//This is needed to start the advertisement of the BLE on the Arduino 101
 	
+	
 	void poll(void);
 	//
-	
-	void setName(const char*);
-	//This function allows you to change the BLE name. MAX 8 characters
 	
 	void clear(void);
 	//This function clears the dashboard on the screen of the smartphone/tablet.
@@ -172,16 +171,17 @@ class AndeeESPClass
 	
 	void vibrate();
 	//This function will cause the smartdevice to vibrate for roughly 1 second
-	
+	//deprecated
+	void setName(const char*);
 	
 } ;
-extern AndeeESPClass AndeeESP;
+extern AndeeClass Andee;
 ///////////////////////////////////
 ///////////////////////////////////
 ///////////////////////////////////
 ///////////////////////////////////
 
- class AndeeESPHelper
+ class AndeeHelper
 {
 	private:	
 	
