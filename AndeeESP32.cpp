@@ -1,4 +1,4 @@
-// AndeeESP.cpp - Arduino 101 Library
+// AndeeESP.cpp - ESP32 Board Library
 // Annikken Pte Ltd
 // Author: Muhammad Hasif
 
@@ -22,7 +22,6 @@ char readBuffer[128];
 char readPartBuffer[64];
 char phoneBuffer[64];
 char sliderBuffer[MAXSLIDER][20];
-
 
 char JoystickBufferX [4];
 char JoystickBufferY [4];

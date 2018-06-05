@@ -1,4 +1,4 @@
-// Andee101.h - Arduino 101 Library
+// AndeeESP.cpp - ESP32 Board Library
 // Annikken Pte Ltd
 // Author: Muhammad Hasif
 
